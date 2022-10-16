@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/bot_dep/dev/QRGuard/QRGuard.csproj": {}
+  },
+  "projects": {
+    "/home/bot_dep/dev/QRGuard/QRGuard.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/bot_dep/dev/QRGuard/QRGuard.csproj",
+        "projectName": "QRGuard",
+        "projectPath": "/home/bot_dep/dev/QRGuard/QRGuard.csproj",
+        "packagesPath": "/home/bot_dep/.nuget/packages/",
+        "outputPath": "/home/bot_dep/dev/QRGuard/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/bot_dep/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Grapevine": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
