@@ -14,13 +14,14 @@ namespace QRGen{
             encoder = new QRCodeEncoder();
         }
 
-        static void EncodeConfig(QRCodeEncoder.ENCODE_MODE mode = QRCodeEncoder.ENCODE_MODE.BYTE, 
+        public static void EncodeConfig(QRCodeEncoder.ENCODE_MODE mode = QRCodeEncoder.ENCODE_MODE.BYTE, 
                                 int scale = 4, 
                                 QRCodeEncoder.ERROR_CORRECTION correctionRatio 
                                 = QRCodeEncoder.ERROR_CORRECTION.M){
             encoder.QRCodeEncodeMode = mode;
             encoder.QRCodeScale = scale;
             encoder.QRCodeErrorCorrect = correctionRatio;
+            //encoder.QRCodeVersion = 4;
         }
 
 
