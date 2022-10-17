@@ -4,27 +4,32 @@ using System.Drawing;
 using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Data;
 
-namespace QR{
-    class program{
-        public static void Main(){
-            var qr = QrCodeUtil.Encode("114514114514;某某某;114514;1919810114514");
-            qr.Save("./a.png");
-
-        } 
-
-        public static class QrCodeUtil
+namespace QRGen{
+    
+    public static class QrCodeUtil
     {
+        static QRCodeEncoder encoder;
+
+        static QrCodeUtil(){
+            encoder = new QRCodeEncoder();
+        }
+
+        static void EncodeConfig(QRCodeEncoder.ENCODE_MODE mode = QRCodeEncoder.ENCODE_MODE.BYTE, 
+                                int scale = 4, 
+                                QRCodeEncoder.ERROR_CORRECTION correctionRatio 
+                                = QRCodeEncoder.ERROR_CORRECTION.M){
+            encoder.QRCodeEncodeMode = mode;
+            encoder.QRCodeScale = scale;
+            encoder.QRCodeErrorCorrect = correctionRatio;
+        }
+
+
         /// <summary>
         /// 返回二维码图片
         /// </summary>
         public static Bitmap Encode(string text)
         {
-            var qrCodeEncoder = new QRCodeEncoder();
-            //qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
-            //qrCodeEncoder.QRCodeScale = 4;
-            //qrCodeEncoder.QRCodeVersion = 29;
-            //qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
-            return qrCodeEncoder.Encode(text);
+            return encoder.Encode(text);
         }
 
         /// <summary>
@@ -33,21 +38,6 @@ namespace QR{
         public static void Create(string text, string path)
         => Encode(text).Save(path);
 
-        /// <summary>
-        /// 返回二维码定义的字符串
-        /// </summary>
-        public static string Decode(Bitmap image)
-        {
-            var qrCodeBitmapImage = new QRCodeBitmapImage(image);
-            var qrCodeDecoder = new QRCodeDecoder();
-            return qrCodeDecoder.decode(qrCodeBitmapImage);
-        }
-
-        /// <summary>
-        /// 返回二维码定义的字符串
-        /// </summary>
-        public static string Decode(string path)
-        => Decode(new Bitmap(path));
     }
-    }
+    
 }

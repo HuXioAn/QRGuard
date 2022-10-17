@@ -6,7 +6,7 @@ using System.IO;
 
 namespace GuardCrypto{
 
-    class aesCrypto{
+    public class aesCrypto{
         //AES128 CBC
         private Aes? aes = null;
         private byte[]? key = null;
@@ -70,7 +70,7 @@ namespace GuardCrypto{
         }
     }
 
-    class shaCrypto{
+    public class shaCrypto{
         //SHA256
         SHA256? sha;
 
