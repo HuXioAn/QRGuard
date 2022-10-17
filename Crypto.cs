@@ -1,6 +1,8 @@
 ﻿using System;
 using static System.Console;
 using System.Security.Cryptography;
+using System.IO;
+
 
 namespace GuardCrypto{
 

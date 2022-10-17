@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "6I7l04RzPiHA6LOUDyAnitiOIXB1SgVDZOebV1hcdoSKZ92OOPT20ZEEXeUNwH7mqw+Mn67pWrmmaQjnzAQAHA==",
+  "dgSpecHash": "X9UXNkvl7k61HL32VVT+wmMNbU12yjAv1ifCqRGeITjHiw8rZwylJJMZfJQ26akXW+3yEluaJJ4FelB7h0JrpA==",
   "success": true,
   "projectFilePath": "/home/bot_dep/dev/QRGuard/QRGuard.csproj",
   "expectedPackageFiles": [
     "/home/bot_dep/.nuget/packages/grapevine/4.2.2/grapevine.4.2.2.nupkg.sha512",
-    "/home/bot_dep/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "/home/bot_dep/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "/home/bot_dep/.nuget/packages/qrcoder/1.4.1/qrcoder.1.4.1.nupkg.sha512",
-    "/home/bot_dep/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
+    "/home/bot_dep/.nuget/packages/microsoft.netcore.platforms/2.0.0/microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "/home/bot_dep/.nuget/packages/microsoft.win32.systemevents/4.5.0/microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "/home/bot_dep/.nuget/packages/system.drawing.common/4.5.0/system.drawing.common.4.5.0.nupkg.sha512",
     "/home/bot_dep/.nuget/packages/system.security.accesscontrol/4.5.0/system.security.accesscontrol.4.5.0.nupkg.sha512",
     "/home/bot_dep/.nuget/packages/system.security.permissions/4.5.0/system.security.permissions.4.5.0.nupkg.sha512",
-    "/home/bot_dep/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512"
+    "/home/bot_dep/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512",
+    "/home/bot_dep/.nuget/packages/thoughtworks.qrcode.standard/1.0.1.6/thoughtworks.qrcode.standard.1.0.1.6.nupkg.sha512"
   ],
   "logs": []
 }

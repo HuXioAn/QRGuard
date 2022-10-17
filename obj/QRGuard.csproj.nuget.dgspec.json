@@ -42,9 +42,9 @@
               "target": "Package",
               "version": "[4.2.2, )"
             },
-            "QRCoder": {
+            "ThoughtWorks.QRCode.Standard": {
               "target": "Package",
-              "version": "[1.4.1, )"
+              "version": "[1.0.1.6, )"
             }
           },
           "imports": [

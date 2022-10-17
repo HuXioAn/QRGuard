@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Grapevine" Version="4.2.2" />
-    <PackageReference Include="QRCoder" Version="1.4.1" />
+    <PackageReference Include="ThoughtWorks.QRCode.Standard" Version="1.0.1.6" />
   </ItemGroup>
 
 </Project>
