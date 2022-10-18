@@ -50,8 +50,10 @@ namespace QRGuard{
             WriteLine(System.Text.Encoding.ASCII.GetString(cipher));
             WriteLine("Base64:{0},Length:{1}",Convert.ToBase64String(cipher),Convert.ToBase64String(cipher).Length);
 
+            //QrCodeUtil.EncodeConfig();
+            //QrCodeUtil.Create(Convert.ToBase64String(cipher),"./b.jpg");
 
-            QrCodeUtil.Create(Convert.ToBase64String(cipher),"./a.jpg");
+            QRCodeHelper.CreateQRCode(Convert.ToBase64String(cipher),"./coding.jpg").Save("./b.jpg");
 
         }
     }
