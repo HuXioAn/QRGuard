@@ -1,59 +1,69 @@
 using System;
 using static System.Console;
+using System.Security.Cryptography;
 using GuardCrypto;
 using QRGen;
-using System.Security.Cryptography;
+
 
 
 
 namespace QRGuard{
-    class Program{
-        static void Main(){
-           
+    class Guard{
 
+        shaCrypto sha256;
+        aesCrypto aes128;
+        DateTime epoch;
+
+        public Guard(){
+            sha256 = new shaCrypto();
+            aes128 = new aesCrypto();
+            epoch = new DateTime(2000,1,1,0,0,0);
+        }
+
+        public int GuardGen(string name){
+            Int64 dt = (Int64)DateTime.Now.Subtract(epoch).TotalSeconds;
+            var delta_time = dt.ToString();
+            //Check name 
+            if(string.IsNullOrWhiteSpace(name)){
+                return -1;
+            }else if(name.Length > 20){
+                name = name[0..20];
+            }
+            string data = name + ";" + delta_time;
+
+            WriteLine($"Raw data:{data},Length:{data.Length}");
             
-            string data = "HuXiaoAn;1665991663";
-
-            var hash = new byte[128];
-            var sha256 = new shaCrypto();
+            var hash = new byte[64];
             if(sha256 != null){
                 sha256.shaCompute(
                     System.Text.Encoding.GetEncoding("ASCII").GetBytes(data),ref hash);
             }
-
-            WriteLine(BitConverter.ToString(hash));
-            WriteLine(System.Text.Encoding.Default.GetString(hash));
-
-            
             string partSha = BitConverter.ToString(hash);
             partSha = partSha.Replace("-","");
             data = data + ";" + partSha[0..12];
-            WriteLine($"AfterSHA Data:{data}");
 
-            
             var cipher = new byte[128];
-            var aes = Aes.Create();
-            // string key = System.Text.Encoding.ASCII.GetString(aes.Key);
-            // WriteLine(key);
-            aes.Key = System.Text.Encoding.ASCII.GetBytes("11451411451411451411451411451444");
-            aes.IV  = System.Text.Encoding.ASCII.GetBytes("1145141145144444");
-            WriteLine($"key:{BitConverter.ToString(aes.Key)},\niv:{BitConverter.ToString(aes.IV)}");
 
-            var aes128 = new aesCrypto();
-            aes128.aesInit(aes.Key,aes.IV);
+            var aesKey = System.Text.Encoding.ASCII.GetBytes("11451411451411451411451411451444");
+            var aesIV  = System.Text.Encoding.ASCII.GetBytes("1145141145144444");
+            aes128.aesInit(aesKey,aesIV);
             aes128.aesLoadData(data);
-
             aes128.aesEncrypt();
             aes128.aesFetchCipher(ref cipher);
-            
-            WriteLine(BitConverter.ToString(cipher));
-            WriteLine(System.Text.Encoding.ASCII.GetString(cipher));
-            WriteLine("Base64:{0},Length:{1}",Convert.ToBase64String(cipher),Convert.ToBase64String(cipher).Length);
 
-            //QrCodeUtil.EncodeConfig();
-            //QrCodeUtil.Create(Convert.ToBase64String(cipher),"./b.jpg");
+            string cipherBase64 = Convert.ToBase64String(cipher);
 
-            QRCodeHelper.CreateQRCode(Convert.ToBase64String(cipher),"./pic/culture.jpg").Save("./pic/b.jpg");
+            WriteLine($"Base64 cipher:{cipherBase64},Length:{cipherBase64.Length}");
+
+            QRCodeHelper.CreateQRCode(cipherBase64,"./pic/culture.jpg").Save("./pic/code.jpg");
+
+
+            return 0;
+        }
+        static void Main(){
+           
+            var guard = new Guard();
+            guard.GuardGen("HuXiaoan");
 
         }
     }

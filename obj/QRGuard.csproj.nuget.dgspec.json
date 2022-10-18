@@ -38,10 +38,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Grapevine": {
-              "target": "Package",
-              "version": "[4.2.2, )"
-            },
             "ThoughtWorks.QRCode.Standard": {
               "target": "Package",
               "version": "[1.0.1.6, )"
