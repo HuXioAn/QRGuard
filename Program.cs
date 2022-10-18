@@ -53,7 +53,7 @@ namespace QRGuard{
             //QrCodeUtil.EncodeConfig();
             //QrCodeUtil.Create(Convert.ToBase64String(cipher),"./b.jpg");
 
-            QRCodeHelper.CreateQRCode(Convert.ToBase64String(cipher),"./coding.jpg").Save("./b.jpg");
+            QRCodeHelper.CreateQRCode(Convert.ToBase64String(cipher),"./pic/culture.jpg").Save("./pic/b.jpg");
 
         }
     }

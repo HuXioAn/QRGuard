@@ -67,7 +67,7 @@ namespace QRGen{
             }
             //插入图片路径
             string path = insertImgUrl;//HttpContext.Current.Server.MapPath(insertImgUrl);
-            var bitmap = AddFrame(CombinImage(image, path),Margin: 5);
+            var bitmap = AddFrame(CombinImage(image, path),Margin: 15);
             return bitmap;
         }
  
