@@ -19,9 +19,13 @@ So we adopted techniques like AES,SHA,BASE64,timestamp to ensure there's expirat
 The whole project consists of several parts in different repos, listed below.
 
 [QRGuard](https://github.com/HuXioAn/QRGuard) : the original implementation of the QRcode generation in C#
+
 [QRGuard-K210](https://github.com/HuXioAn/QRGuard-K210) : micropython code for K210 
+
 [QRGuard-WebApi](https://github.com/HuXioAn/QRGuard-WebApi) : a asp.net application provide minimal restful api for the QRCode
+
 [QRGuard-Blazor](https://github.com/HuXioAn/QRGuard-Blazor) : a blazor web page for users to requesting the QRCode
+
 [QRGuard-LarrkBot](https://github.com/HuXioAn/QRGuard-LarrkBot) : a Python service to provide quick authentication for the web page
 
 
